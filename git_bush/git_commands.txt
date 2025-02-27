@@ -1,0 +1,45 @@
+# Clone a GitHub repository
+git clone <repository_url>
+
+# Navigate to a directory
+cd /path/to/directory
+
+# Remove a file
+rm filename
+
+# Remove multiple files
+rm file1 file2 file3
+
+# Forcefully remove a file
+rm -f filename
+
+# Remove all files in a directory
+rm -r *
+
+# Remove a directory and its contents
+rm -rf foldername
+
+# Remove a file from Git tracking and commit the change
+git rm filename
+git commit -m "Removed file"
+git push origin main
+
+# Push a Jupyter Notebook to a GitHub repository
+cd /path/to/repository
+git status
+git add your_notebook.ipynb
+git commit -m "Added Jupyter Notebook file"
+git push origin main
+
+# Create a new folder
+mkdir new_folder
+
+# Create a file inside the new folder using different methods
+echo "" > new_folder/example.txt  # Method 1: Using echo
+nano new_folder/example.txt       # Method 2: Using nano editor
+vim new_folder/example.txt        # Method 3: Using vim editor
+
+# Add and commit the new folder to Git
+git add new_folder
+git commit -m "Added new folder with necessary files"
+git push origin main
