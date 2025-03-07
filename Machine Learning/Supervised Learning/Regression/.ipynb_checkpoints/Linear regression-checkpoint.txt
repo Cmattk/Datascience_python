@@ -1,0 +1,43 @@
+Linear regression is a statistical method that is used to predict a continuous dependent variable i.e target variable based on one or more independent variables.
+
+This technique assumes a linear relationship between the dependent and independent variables which means the dependent variable changes proportionally with changes in the independent variables.
+
+Types of Linear Regression
+
+Simple linear regression: This involves predicting a dependent variable based on a single independent variable.
+
+Multiple linear regression: This involves predicting a dependent variable based on multiple independent variables.
+
+Polynomial linear regression: This involves predicting a dependent variable based on a polynomial relationship between independent and dependent variables.
+
+1. Simple Linear Regression
+
+Simple linear regression is an approach for predicting a response using a single feature. It is one of the most basic and simple machine learning models. In linear regression, we assume that the two variables, i.e., dependent and independent variables, are linearly related. Hence we try to find a linear function that predicts the value (y) with reference to the independent variable (x). 
+
+yi = β0 + β1​xi1 + εi
+
+yi = predicted response value for ith observation.
+b_0, b_1, are the regression coefficients.
+ε_i represents a residual error in ith observation.
+
+2. Multiple Linear Regression
+
+Multiple linear regression attempts to model the relationship between two or more features and a response by fitting a linear equation to the observed data. It is an extension of simple linear regression. 
+
+Consider a dataset with p features (or independent variables) and one response (or dependent variable). 
+Also, the dataset contains n rows/observations. 
+
+We define:
+X (feature matrix) = a matrix of size n X p, where xij denotes the values of the jth feature for ith observation.
+
+y (response vector) = a vector of size n where y_{i} denotes the value of response for ith observation.
+
+The regression line for p features is represented as: 
+yi = β0 + β1​xi1 + β2*xi2+ …. + βp​xip + εi
+
+yi = predicted response value for ith observation.
+b_0, b_1, …, b_p are the regression coefficients.
+ε_i represents a residual error in ith observation.
+
+ we determine an estimate of b i.e. b’ using the Least Squares method. As already explained, the Least Squares method tends to determine b’ for which total residual error is minimized.
+  
