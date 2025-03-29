@@ -1,0 +1,116 @@
+# Supervised and Unsupervised learning
+
+Supervised and unsupervised learning are two key approaches in machine learning. 
+
+# Supervised learning
+
+Supervised learning as the name indicates has the presence of a supervisor as a teacher. 
+Supervised learning is when we teach or train the machine using data that is well-labelled. 
+Which means some data is already tagged with the correct answer. 
+After that, the machine is provided with a new set of examples (data), 
+so that the supervised learning algorithm analyses the training data (set of training examples) 
+and produces a correct outcome from labeled data.
+labeled data means the data comes with correct answers or classifications.
+
+example:
+You have a fruit basket that you want to identify. 
+The machine would first analyze the image to extract features such as;
+its shape, color, and texture.
+Then, it would compare these features to the features of the fruits it has already learned about.
+If the new image’s features are most similar to those of an apple, the machine would predict that the fruit is an apple.
+
+# Types of Supervised Learning
+Supervised learning is classified into two categories of algorithms: 
+
+1. Regression
+
+A regression problem is when the output variable is a real value, such as “dollars” or “weight”.
+
+Regression is a type of supervised learning that is used to predict continuous values,
+such as house prices, stock prices, or customer churn. 
+Regression algorithms learn a function that maps from the input features to the output value.
+
+Some common regression algorithms include:
+
+Linear Regression
+Polynomial Regression
+Lasso Regression
+Ridge Regression
+
+
+2. Classification
+
+A classification problem is when the output variable is a category, such as “Yes” or “No” , “disease” or “no disease”.
+
+Classification is a type of supervised learning that is used to predict categorical values, 
+such as whether a customer will churn or not, whether an email is spam or not, or whether a medical image shows a tumor or not. 
+Classification algorithms learn a function that maps from the input features to a probability distribution over the output classes.
+
+Some of the most common classification algorithms include:
+
+Logistic Regression
+Support Vector Machines
+Decision Trees
+Random Forests
+Naive Baye
+
+
+
+# Unsupervised learning
+
+Unsupervised learning is a type of machine learning that works with data that has no labels or categories.
+The main goal is to find patterns and relationships in the data without any guidance.
+
+The machine analyzes unorganized information and groups it based on similarities, patterns, or differences. 
+Unlike supervised learning, there is no teacher or training involved.
+The machine must uncover hidden structures in the data on its own.
+
+# example:
+unsupervised learning can analyze animal data and group the animals by their traits and behavior. 
+These groups could correspond to different species, making it possible to organize the animals without pre-existing labels.
+
+a machine learning model trained on a large dataset of unlabeled images, containing both dogs and cats.
+The machine has no idea about the features of dogs and cats so we can’t categorize it as ‘dogs and cats ‘. 
+But it can categorize them according to their similarities, patterns, and differences, 
+i.e., we can easily categorize the above picture into two parts.
+The first may contain all pics having dogs in them and the second part may contain all pics having cats in them.
+
+
+# Types of Unsupervised Learning
+
+1. Clustering
+A clustering problem is where you want to discover the inherent groupings in the data, 
+such as grouping customers by purchasing behavior.
+
+Clustering is a type of unsupervised learning that is used to group similar data points together. 
+Clustering algorithms work by iteratively moving data points closer to their cluster centers and further away from data points in other clusters. 
+
+clustering algorithms include:
+
+K-means clustering
+Hierarchical clustering
+Principal Component Analysis (PCA)
+Singular Value Decomposition (SVD)
+Independent Component Analysis
+Gaussian Mixture Models (GMMs)
+Density-Based Spatial Clustering of Applications with Noise (DBSCAN)
+
+2. Association rule learning
+An association rule learning problem is where you want to discover rules that describe large portions of your data, 
+such as people that buy X also tend to buy Y
+
+Association rule learning is a type of unsupervised learning that is used to identify patterns in a data. 
+Association rule learning algorithms work by finding relationships between different items in a dataset.
+
+association rule learning algorithms include:
+
+Apriori Algorithm
+Eclat Algorithm
+FP-Growth Algorithm
+
+
+Supervised learning is well-suited for tasks where the desired output is known, 
+while unsupervised learning is well-suited for tasks where the desired output is unknown.
+
+
+
