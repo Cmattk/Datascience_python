@@ -1,0 +1,1 @@
+select * from sakila.actor limit 100;
