@@ -6,7 +6,7 @@ create table transactions(
 );
 
 insert into transactions (amount)
-values (570.00), (566.35), (459.85),(570.00), (566.35), (459.85);
+values (4.99), (2.45), (4.85),(1.00), (6.35), (9.85);
 
 select * from transactions;
 
@@ -17,7 +17,7 @@ delete from transactions;
 select * from transactions;
 
 insert into transactions (amount)
-values (570.00), (566.35), (459.85),(570.00), (566.35), (459.85);
+values (4.99), (2.45), (4.85),(1.00), (6.35), (9.85);
 select * from transactions;
 
 drop table transactions;

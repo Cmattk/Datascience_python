@@ -23,7 +23,7 @@ create table transactions(
 
 
 insert into transactions (amount)
-values (570.00), (566.35), (459.85),(570.00), (506.35), (579.85);
+values (4.99), (2.45), (4.85),(1.00), (6.35), (9.85);
 
 select * from transactions;
 
@@ -37,7 +37,7 @@ alter table transactions
 auto_increment = 1000;
 
 insert into transactions (amount, customer_id)
-values (570.00, 3), (566.35,2), (459.85,1),(350.00,2), (256.35,4), (159.85,1), (100.00, null);
+values (4.99, 3), (2.45,2), (4.85,1),(1.00,2), (6.35,4), (9.85,1), (7.00, null);
 select * from transactions;
 
 delete from customers
