@@ -29,7 +29,8 @@ select * from transactions;
 
 alter table transactions
 add constraint fk_customer_id	
-foreign key (customer_id) references customers (customer_id);
+foreign key (customer_id) references customers (customer_id)
+on delete set null;
 
 delete from transactions;
 
