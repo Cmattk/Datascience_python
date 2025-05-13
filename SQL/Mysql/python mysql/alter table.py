@@ -2,7 +2,7 @@ from mysql.connector import connection
 
 conn = connection.MySQLConnection(host = 'localhost',
                                   user = 'root',
-                                  password = '@Cmkf2100#',
+                                  password = '@Mathias#',
                                   database = 'geeks4geeks')
 
 # get cursor by cursor() method

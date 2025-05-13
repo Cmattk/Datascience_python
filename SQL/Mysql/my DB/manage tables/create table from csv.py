@@ -9,7 +9,7 @@ df['DATE'] = pd.to_datetime(df['DATE']).dt.strftime('%Y-%m-%d')
 conn = mysql.connector.connect(
     host='localhost',
     user='root',
-    password='@Cmkf2100#',
+    password='@Mathias#',
     database='geeks4geeks'
 )
 
