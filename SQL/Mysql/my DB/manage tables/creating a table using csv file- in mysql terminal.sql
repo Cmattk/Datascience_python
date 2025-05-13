@@ -1,0 +1,26 @@
+SELECT * FROM `myrestaurant`.`employees` LIMIT 1000;
+
+create table TRANSFER (
+    DATE DATE,
+    TOTAL_TIME INT,
+    HOURS INT,
+    MINUTES INT
+);
+
+
+SHOW VARIABLES LIKE 'secure_file_priv';
+
+
+SET GLOBAL local_infile = 1;
+
+
+LOAD DATA INFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\Transfer.csv'
+INTO TABLE TRANSFER
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"' 
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+SELECT * FROM TRANSFER;
+
+DROP TABLE TRANSFER;
