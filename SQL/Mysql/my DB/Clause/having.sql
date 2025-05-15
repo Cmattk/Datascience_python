@@ -1,0 +1,2 @@
+-- HAVING clause allows you to apply conditions to the groups created by the GROUP BY clause.
+-- useful when you want to filter data based on aggregate values such as sums, averages, counts, etc.
