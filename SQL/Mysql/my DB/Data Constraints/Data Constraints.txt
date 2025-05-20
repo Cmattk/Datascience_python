@@ -1,0 +1,5 @@
+-- Data Constraints
+
+Helps keep your data accurate by setting rules for what can be stored.
+
+These rules, called constraints, prevent invalid entries like missing values or duplicates, ensuring clean and reliable data.
