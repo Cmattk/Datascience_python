@@ -1,8 +1,30 @@
+# Cloning and Navigation
+# ---------------------------------------------------
+
 # Clone a GitHub repository
 git clone <repository_url>
 
 # Navigate to a directory
 cd /path/to/directory
+
+# Create a new folder
+mkdir new_folder
+
+# Create a file inside the new folder using different methods
+echo "" > new_folder/example.txt  # Method 1: Using echo
+notepad new_folder/example.txt   # Method 2: Using Notepad (Windows)
+vim new_folder/example.txt       # Method 3: Using Vim
+
+# View content in a file
+cat file_name
+
+# Edit a .txt file in the notebook
+notepad file_name.txt
+
+
+# ---------------------------------------------------
+# File and Folder Management
+# ---------------------------------------------------
 
 # Remove a file
 rm filename
@@ -24,22 +46,143 @@ git rm filename
 git commit -m "Removed file"
 git push origin main
 
-# Push a Jupyter Notebook to a GitHub repository
-cd /path/to/repository
+
+# ---------------------------------------------------
+#  Adding, Committing, and Pushing
+# ---------------------------------------------------
+
+# Check status
 git status
+
+# Add a specific file
 git add your_notebook.ipynb
-git commit -m "Added Jupyter Notebook file"
-git push origin main
 
-# Create a new folder
-mkdir new_folder
-
-# Create a file inside the new folder using different methods
-echo "" > new_folder/example.txt  # Method 1: Using echo
-nano new_folder/example.txt       # Method 2: Using nano editor
-vim new_folder/example.txt        # Method 3: Using vim editor
-
-# Add and commit the new folder to Git
+# Add a folder
 git add new_folder
-git commit -m "Added new folder with necessary files"
+
+# Add all files
+git add .
+
+# Commit changes
+git commit -m "Your commit message"
+
+# Push to main branch
 git push origin main
+
+# Push all branches
+git push --all origin
+
+# Pull latest changes
+git pull origin main
+
+
+# ---------------------------------------------------
+#  Branching and Merging
+# ---------------------------------------------------
+
+# Check current branch
+git branch
+
+# Create a new branch and switch to it
+git checkout -b new-branch-name
+
+# Switch to an existing branch
+git checkout branch-name
+
+# Merge a branch into current branch
+git merge branch-name
+
+# Delete a local branch
+git branch -d branch-name
+
+# Delete a remote branch
+git push origin --delete branch-name
+
+
+# ---------------------------------------------------
+#  Git History and Differences
+# ---------------------------------------------------
+
+# View full commit history
+git log
+
+# View concise log
+git log --oneline
+
+# View file changes
+git diff filename
+
+# View staged changes
+git diff --cached
+
+
+# ---------------------------------------------------
+#  Staging and Resetting
+# ---------------------------------------------------
+
+# Unstage a specific file
+git reset filename
+
+# Unstage all files
+git reset
+
+# Undo last commit but keep changes
+git reset --soft HEAD~1
+
+# Remove last commit and changes (destructive)
+git reset --hard HEAD~1
+
+
+# ---------------------------------------------------
+#  Configuration and Setup
+# ---------------------------------------------------
+
+# Set global username
+git config --global user.name "Your Name"
+
+# Set global email
+git config --global user.email "you@example.com"
+
+# View Git configuration
+git config --list
+
+
+# ---------------------------------------------------
+#  Git Ignore
+# ---------------------------------------------------
+
+# Create a .gitignore file
+notepad .gitignore
+
+# Add common entries to .gitignore
+echo "__pycache__/" >> .gitignore
+echo "*.ipynb_checkpoints" >> .gitignore
+echo "*.log" >> .gitignore
+
+
+# ---------------------------------------------------
+#  Cleaning and Maintenance
+# ---------------------------------------------------
+
+# Preview files to be removed
+git clean -n
+
+# Remove untracked files
+git clean -f
+
+# Remove untracked files and directories
+git clean -fd
+
+
+# ---------------------------------------------------
+#  Remote Management
+# ---------------------------------------------------
+
+# Show remotes
+git remote -v
+
+# Add a new remote
+git remote add origin <repository_url>
+
+# Change remote URL
+git remote set-url origin <new_url>
