@@ -1,0 +1,117 @@
+-- terminal --
+---- Create a New Database ----
+
+dvdrental_test=# create database corp;
+CREATE DATABASE
+
+-- quit current database -- 
+
+dvdrental_test-# \q
+
+-- switch to current database -- 
+
+C:\Users\...\Datascience_python>set "PGPASSWORD=<mypassword>" && "C:\Program Files\PostgreSQL\17\bin\psql.exe" -U postgres -h 127.0.0.1 -p 5432 -d postgres      
+psql (17.5)
+WARNING: Console code page (437) differs from Windows code page (1252)
+         8-bit characters might not work correctly. See psql reference
+         page "Notes for Windows users" for details.
+Type "help" for help.
+
+-- Switch to the 'corp' database: --
+
+postgres=# \c corp
+You are now connected to database "corp" as user "postgres".
+
+-- Create Tables -- 
+
+corp=# create table contacts(
+corp(#  id int generated always as identity primary key,
+corp(#  name varchar(255) not null,
+corp(#  phone varchar(255) not null
+corp(# );
+CREATE TABLE
+
+corp=# create table forecasts (
+corp(#  year int,
+corp(#  month int,
+corp(#  amount NUMERIC
+corp(# );
+CREATE TABLE
+
+--- : Create Roles and Assign Privileges  ---
+
+-- Create a role 'DAVE' that can log in with a password and 
+-- inherit all privileges of group roles of which it is a member:
+
+corp=# CREATE ROLE dave INHERIT LOGIN PASSWORD 'dave123';
+CREATE ROLE
+
+-- Grant the select on the 'forecasts' table to 'dave':
+corp=# GRANT SELECT ON forecasts TO dave;
+GRANT
+
+-- check grant table
+corp=# \z
+                                        Access privileges
+ Schema |      Name       |   Type   |     Access privileges      | Column privileges | Policies Column privileges | Policies                                      -------------------+----------
+--------+-----------------+----------+----------------------------+                   |-------------------+----------                                                        |
+ public | contacts        | table    |                            |                   |                   |                                                                  |
+ public | contacts_id_seq | sequence |                            |                   |
+ public | forecasts       | table    | postgres=arwdDxtm/postgres+|                   |
+        |                 |          | bloodline=r/postgres       |                   |
+(3 rows)
+
+----: Create and Manage Group Roles ----
+
+-- 'marketing' group role:
+corp=# CREATE ROLE marketing NOINHERIT;
+CREATE ROLE
+
+-- 'planning' group role:
+corp=# CREATE ROLE planning NOINHERIT;
+CREATE ROLE
+
+-- Grant all privileges on 'contacts' table to 'marketing':
+corp=# GRANT ALL ON contacts TO marketing;
+GRANT
+
+-- Grant all privileges on 'forecasts' table to 'planning':
+corp=# GRANT ALL ON forecasts TO planning;
+GRANT
+
+-- Add 'dave' as a member of 'marketing':
+corp=# GRANT marketing TO dave;
+GRANT ROLE
+
+-- Add 'planning' as a member of 'marketing':
+GRANT marketing TO planning;
+GRANT ROLE
+
+-- Now, the role dave can select data from the forecasts table:
+corp=# SELECT * FROM forecasts;
+
+corp=# \z
+                                       Access privileges
+ Schema |      Name       |   Type   |      Access privileges      | Column privileges | Policies
+--------+-----------------+----------+-----------------------------+-------------------+----------
+ public | contacts        | table    | postgres=arwdDxtm/postgres +|                   |
+        |                 |          | marketing=arwdDxtm/postgres |                   |
+ public | contacts_id_seq | sequence |                             |                   |
+ public | forecasts       | table    | postgres=arwdDxtm/postgres +|                   |
+        |                 |          | dave=r/postgres       +|                   |
+        |                 |          | planning=arwdDxtm/postgres  |                   |
+
+
+corp=# select * from forecasts;
+ year | month | amount
+------+-------+--------
+(0 rows)
+
+
+corp=# INSERT INTO contacts (name, phone) VALUES ('Raju Kumar', '408-102-3459');
+INSERT 0 1
+corp=# SELECT * FROM contacts;
+ id |    name    |    phone
+----+------------+--------------
+  1 | Raju Kumar | 408-102-3459
+(1 row)
